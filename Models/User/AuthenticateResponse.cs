@@ -1,5 +1,4 @@
-﻿using Boat_2.Models;
-
+﻿
 namespace LiveChat.Models.User
 {
     public class AuthenticateResponse
@@ -13,7 +12,7 @@ namespace LiveChat.Models.User
         public DateTime DateOfBirthday { get; set; } = DateTime.Now;
         public int Age { get; set; } = 0;
 
-        public AuthenticateResponse(Users user, string token)
+        public AuthenticateResponse(ChatUsers user, string token)
         {
             Id = user.Id;
             FirstName = user.FirstName;

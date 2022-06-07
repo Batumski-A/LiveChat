@@ -1,63 +1,80 @@
-﻿using Boat_2.Data;
-using Boat_2.Models;
-using LiveChat.Helpers;
-using LiveChat.Models.User;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-
+﻿
 namespace LiveChat.Services
 {
-    public class UserService
+    using LiveChat.Data;
+    using LiveChat.Models;
+    using LiveChat.Helpers;
+    using LiveChat.Models.User;
+    using Microsoft.Extensions.Options;
+    using Microsoft.IdentityModel.Tokens;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Security.Claims;
+    using System.Text;
+
+    public interface IUserService
+    {
+        AuthenticateResponse Authenticate(string username,string password);
+        IEnumerable<ChatUsers> GetAll();
+        ChatUsers GetById(int id);
+    }
+
+    public class UserService : IUserService
     {
         private readonly AppDbContext _context;
         private readonly AppSettings _appSettings;
 
-        public UserService(AppDbContext context,AppSettings appSettings)
+        public UserService(IOptions<AppSettings> appSettings,AppDbContext context)
         {
-              _context = context;
-            _appSettings = appSettings;
+            _context = context;
+            _appSettings = appSettings.Value;
+        }
+     
+        public AuthenticateResponse Authenticate(string userName,string password)
+        {
+            var users = _context.ChatUsers.FirstOrDefault(x => x.Username == userName && x.Password == password);
+            if (users == null) return null;
+
+            var token = GenerateJwtToken(users);
+
+            return new AuthenticateResponse(users, token);
+
         }
 
-      /*  public AuthenticateResponse Authenticate(AuthenticateRequest model)
+        public IEnumerable<ChatUsers> GetAll()
         {
-            var user = _context.users.FirstOrDefault(x => x.Username == model.Username && x.Password == model.Password);
-
-            // return null if user not found
-            if (user == null) return null;
-
-            // authentication successful so generate jwt token
-            var token = generateJwtToken(user);
-
-            return new AuthenticateResponse(user, token);
-        }*/
-
-        public IEnumerable<Users> GetAll()
-        {
-            return _context.users.ToList();
+            return _context.ChatUsers.ToList();
         }
 
-        public Users GetById(int id)
+        public ChatUsers GetById(int id)
         {
-            var user = _context.users.FirstOrDefault(x => x.Id == id);
+            var user = _context.ChatUsers.FirstOrDefault(x => x.Id == id);
             if (user != null)
                 return user;
-            return (Users)Results.BadRequest("");
+            return (ChatUsers)Results.BadRequest("Not Found With this Id:" + id);
         }
-
-       /* private string generateJwtToken(Users user)
+        private string GenerateJwtToken(ChatUsers user)
         {
-            // generate token that is valid for 7 days
+            //generate token 7 Days
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
+            System.Diagnostics.Debug.WriteLine("----------------------------");
+
+            var tokenDescriptior = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()), new Claim("Username", user.Username.ToString()), new Claim("FirstName", user.FirstName.ToString()), new Claim("LastName", user.LastName.ToString()) }),
-                Expires = DateTime.UtcNow.AddMinutes(120),
+                Subject = new ClaimsIdentity(new[] 
+                {
+                    new Claim(ClaimTypes.NameIdentifier,"id",user.Id.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier,user.Email),
+                    new Claim(ClaimTypes.NameIdentifier,user.Username),
+                    new Claim(ClaimTypes.NameIdentifier,user.Age.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier,user.FirstName),
+                    new Claim(ClaimTypes.NameIdentifier,user.LastName)
+                }),
+                Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var token = tokenHandler.CreateToken(tokenDescriptior);
             return tokenHandler.WriteToken(token);
-        }*/
-
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Boat_2.Models;
+namespace LiveChat.Models;
 
 public class AuthenticateRequest
 {
