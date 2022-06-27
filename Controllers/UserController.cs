@@ -127,6 +127,13 @@ namespace LiveChat.Controllers
         }
 
         [HttpGet]
+        public IActionResult LogOut()
+        {
+            globalDynamic = null;
+            return View("~/Views/User/Index.cshtml", globalDynamic);
+        }
+
+        [HttpGet]
         public IActionResult UserFriends()
         {
             return View("~/Views/User/UserFriends.cshtml", globalDynamic);
