@@ -1,46 +1,46 @@
-/* _content/LiveChat/Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* _content/LiveChat/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand[b-8mpz0drja3] {
+a.navbar-brand[b-akfju034x2] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
 }
 
-a[b-8mpz0drja3] {
+a[b-akfju034x2] {
   color: #0077cc;
 }
 
-.btn-primary[b-8mpz0drja3] {
+.btn-primary[b-akfju034x2] {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
-.nav-pills .nav-link.active[b-8mpz0drja3], .nav-pills .show > .nav-link[b-8mpz0drja3] {
+.nav-pills .nav-link.active[b-akfju034x2], .nav-pills .show > .nav-link[b-akfju034x2] {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
-.border-top[b-8mpz0drja3] {
+.border-top[b-akfju034x2] {
   border-top: 1px solid #e5e5e5;
 }
-.border-bottom[b-8mpz0drja3] {
+.border-bottom[b-akfju034x2] {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.box-shadow[b-8mpz0drja3] {
+.box-shadow[b-akfju034x2] {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-button.accept-policy[b-8mpz0drja3] {
+button.accept-policy[b-akfju034x2] {
   font-size: 1rem;
   line-height: inherit;
 }
 
-.footer[b-8mpz0drja3] {
+.footer[b-akfju034x2] {
   position: absolute;
   bottom: 0;
   width: 100%;

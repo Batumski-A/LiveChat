@@ -376,9 +376,7 @@ E:\.Net\Projects\LiveChat\obj\Debug\net6.0\LiveChat.RazorAssemblyInfo.cache
 E:\.Net\Projects\LiveChat\obj\Debug\net6.0\LiveChat.RazorAssemblyInfo.cs
 E:\.Net\Projects\LiveChat\obj\Debug\net6.0\staticwebassets.build.json
 E:\.Net\Projects\LiveChat\obj\Debug\net6.0\staticwebassets.development.json
-E:\.Net\Projects\LiveChat\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 E:\.Net\Projects\LiveChat\obj\Debug\net6.0\scopedcss\bundle\LiveChat.styles.css
-E:\.Net\Projects\LiveChat\obj\Debug\net6.0\scopedcss\projectbundle\LiveChat.bundle.scp.css
 E:\.Net\Projects\LiveChat\obj\Debug\net6.0\LiveChat.csproj.CopyComplete
 E:\.Net\Projects\LiveChat\obj\Debug\net6.0\LiveChat.dll
 E:\.Net\Projects\LiveChat\obj\Debug\net6.0\refint\LiveChat.dll
@@ -399,3 +397,6 @@ E:\.Net\Projects\LiveChat\bin\Debug\net6.0\Microsoft.Identity.Web.Certificate.dl
 E:\.Net\Projects\LiveChat\bin\Debug\net6.0\Microsoft.Identity.Web.Certificateless.dll
 E:\.Net\Projects\LiveChat\bin\Debug\net6.0\Microsoft.Identity.Web.TokenCache.dll
 E:\.Net\Projects\LiveChat\bin\Debug\net6.0\Microsoft.IdentityModel.Validators.dll
+E:\.Net\Projects\LiveChat\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\.Net\Projects\LiveChat\bin\Debug\net6.0\package-lock.json
+E:\.Net\Projects\LiveChat\bin\Debug\net6.0\package.json

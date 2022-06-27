@@ -1,0 +1,27 @@
+﻿@model dynamic
+@if(Model != null){
+    <div class="container" style="width:100%;">
+        <div style="width:100%; float:left; padding:1%;">
+            <h2 class="text-center modal-header">AllUsers</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Item in Model.Friends)
+                    {
+                        <tr class="Search">
+                            <td>@Item.FirstName</td>
+                            <td>@Item.LastName</td>
+                            <td><a href="@Url.Action("AddFriend","User", new {friendId = Item.Id})" type="button" class="btn btn-outline-success">Send Request</a></td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

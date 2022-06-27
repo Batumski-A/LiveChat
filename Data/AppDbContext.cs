@@ -1,4 +1,5 @@
 ﻿using LiveChat.Models;
+using LiveChat.Models.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace LiveChat.Data
@@ -9,5 +10,6 @@ namespace LiveChat.Data
         {
         }
         public DbSet<ChatUsers> ChatUsers { get; set; }
+        public DbSet<Messages> Messages { get; set; }
     }
 }

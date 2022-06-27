@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LiveChat.Models;
-
-public class AuthenticateRequest
+namespace LiveChat.Models
 {
-    [Required]
-    public string? Username { get; set; }
+    public class AuthenticateRequest
+    {
+        [Required]
+        public string? Username { get; set; }
+        [Required]
+        public string? Password { get; set; }
+    }
 
-    [Required]
-    public string? Password { get; set; }
 }

@@ -17,5 +17,8 @@ namespace LiveChat.Models
         public string Username { get; set; } = string.Empty;
         [Required,MinLength(9)]
         public string Password { get; set; } = string.Empty;
+        public byte[] ProfileImage { get; set; } = null;
+        public string FriendRequest { get; set; } = string.Empty;
+        public string Friends { get; set; } = string.Empty;
     }
 }

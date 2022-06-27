@@ -1,0 +1,47 @@
+﻿@model dynamic
+
+@if (Model != null)
+{
+    <div class="container" style="width:100%;">
+        <div class="container-sm" style="width:25%; padding-right:3%; float:left;text-align:center;">
+            <table class="table table-striped">
+                <tbody>
+                    @foreach (var Item in Model.Friends)
+                    {
+                        <tr class="Search" style="padding:10px;" type="btn">
+                            <td>
+                                <img src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg" style="width:50px;height:60px; float:left;" />
+                            </td>
+                            <td><a href="@Url.Action("Message","User", new {friendId = Item.Id})" type="button" class="btn btn-outline-success">@Item.FirstName</a></td>
+                            <td>@Item.LastName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-md" style="width:75%; padding:1%; float:left;text-align:center;">
+            <div style="position:fixed; background-color:red;width:50%;height:90%;margin-bottom:20px;">
+                <div class="position-fixed" style="width:50%;height:80%;background-color:pink;">
+                    <table class="table table-striped">
+                        <tbody>
+                          @*  @foreach (var item in Model.Messages)
+                            {
+                                <tr class="Search" style="padding:10px;" type="btn">
+                                    <td>
+                                        @item.Message
+                                    </td>
+                                </tr>
+                            }*@
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="position-fixed" style="width:50%;height:10%;background-color:blue;bottom:20px;">
+                    <input formnovalidate type="text" class="form-control message" name="message" id="message" placeholder="Siple Text" style="width:80%;height:100%; float:left;">
+                    <a type="button" class="btn btn-outline-success" href="@Url.Action("SendMessage","User", new {message=$"message",friendId = @Model.FriendId})" style="float:left;width:20%;height:100%;">Send</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

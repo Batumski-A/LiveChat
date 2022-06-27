@@ -1,0 +1,58 @@
+﻿@model dynamic
+<fieldset>
+    <legend>Registration</legend>
+    <form asp-controller="User" asp-action="Registration" mehod="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+            <input formnovalidate type="email" class="form-control" name="Email" aria-describedby="registration-button" placeholder="example@gmail.com">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            @if (Model != null)
+            {
+                <br />
+                <small class="form-text text-muted">@Model.errors[0]</small>
+            }
+            <br />
+            <div class="form-group">
+                <label for="formFile"  class="form-label mt-4">ProfileImage</label>
+                <input formnovalidate class="form-control" name="profileImage" type="file" id="formFile">
+            </div>
+            <br />
+            <label for="exampleLogin" class="form-label mt-4">First Name</label>
+            <input formnovalidate aria-describedby="registration-button" type="text" class="form-control" aria-label="Recipient's FirstName" name="FirstName" placeholder="First Name">
+            @if (Model != null)
+            {
+                <small style="color:red;" class="form-text text-muted">@Model.errors[1]</small>
+            }
+            <br />
+
+            <label for="exampleLogin" class="form-label mt-4">Last Name</label>
+            <input formnovalidate aria-describedby="registration-button" type="text" class="form-control" name="LastName" placeholder="Last Name">
+            @if (Model != null)
+            {
+                <small class="form-text text-muted">@Model.errors[2]</small>
+            }
+            <br />
+            <label for="exampleLogin" class="form-label mt-4">Age</label>
+            <input formnovalidate aria-describedby="registration-button" type="number" name="Age" class="form-control" placeholder="Age">
+            @if (Model != null)
+            {
+                <small class="form-text text-muted">@Model.errors[3]</small>
+            }
+            <br />
+            <label for="exampleLogin" class="form-label mt-4">Username</label>
+            <input formnovalidate aria-describedby="registration-button" type="text" class="form-control" name="Username" placeholder="Username">
+            @if (Model != null)
+            {
+                <small class="form-text text-muted">@Model.errors[4]</small>
+            }<br />
+            <label for="exampleLogin" class="form-label mt-4">Password</label>
+            <input formnovalidate aria-describedby="registration-button" type="Password" class="form-control" name="Password" id="exampleInputPassword1" placeholder="Password">
+            @if (Model != null)
+            {
+                <small class="form-text text-muted">@Model.errors[5]</small>
+            }
+        </div>
+        <br />
+        <button class="btn btn-primary" type="submit" id="registration-button">Upload</button>
+    </form>
+</fieldset>

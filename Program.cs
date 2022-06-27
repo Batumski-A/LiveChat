@@ -14,8 +14,6 @@ builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSet
 
 builder.Services.AddScoped<UserService, UserService>();
 
-builder.Services.AddRazorPages();
-
 builder.Services.AddHsts(options =>
 {
     options.Preload = true;
@@ -32,6 +30,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddControllersWithViews();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -57,7 +57,7 @@ builder.Services.AddSwaggerGen(c =>
                         Id = "Bearer"
                 }
             },
-            new string[] {}
+            Array.Empty<string>()
         }
     });
 });
@@ -96,7 +96,6 @@ app.UseSwagger();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 else
@@ -113,10 +112,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "/{controller=Home}/{action=index}/{id?}");
 
-app.MapRazorPages();
+
 app.UseSwaggerUI();
 app.Run();

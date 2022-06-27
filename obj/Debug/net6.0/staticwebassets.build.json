@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ad7CiotTRMh9CHAUw1XunlSXQP0JEs8LjuSnGwNI6uM=",
+  "Hash": "TB4Fw/692/QHtqxGpCtg0oR8eQJNODF//wj52pXP/Fk=",
   "Source": "LiveChat",
   "BasePath": "_content/LiveChat",
   "Mode": "Default",
@@ -17,38 +17,21 @@
   ],
   "Assets": [
     {
-      "Identity": "E:\\.Net\\Projects\\LiveChat\\obj\\Debug\\net6.0\\scopedcss\\bundle\\LiveChat.styles.css",
+      "Identity": "E:\\.Net\\Projects\\LiveChat\\wwwroot\\css\\BoostWatch.css",
       "SourceId": "LiveChat",
-      "SourceType": "Computed",
-      "ContentRoot": "E:\\.Net\\Projects\\LiveChat\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\.Net\\Projects\\LiveChat\\wwwroot\\",
       "BasePath": "_content/LiveChat",
-      "RelativePath": "LiveChat.styles.css",
+      "RelativePath": "css/BoostWatch.css",
       "AssetKind": "All",
-      "AssetMode": "CurrentProject",
+      "AssetMode": "All",
       "AssetRole": "Primary",
       "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\.Net\\Projects\\LiveChat\\obj\\Debug\\net6.0\\scopedcss\\bundle\\LiveChat.styles.css"
-    },
-    {
-      "Identity": "E:\\.Net\\Projects\\LiveChat\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\LiveChat.bundle.scp.css",
-      "SourceId": "LiveChat",
-      "SourceType": "Computed",
-      "ContentRoot": "E:\\.Net\\Projects\\LiveChat\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/LiveChat",
-      "RelativePath": "LiveChat.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\.Net\\Projects\\LiveChat\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\LiveChat.bundle.scp.css"
+      "OriginalItemSpec": "wwwroot\\css\\BoostWatch.css"
     },
     {
       "Identity": "E:\\.Net\\Projects\\LiveChat\\wwwroot\\css\\site.css",
@@ -916,6 +899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Identity": "E:\\.Net\\Projects\\LiveChat\\wwwroot\\lib\\jquery\\dist\\jquery-3.6.0.min.js",
+      "SourceId": "LiveChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\.Net\\Projects\\LiveChat\\wwwroot\\",
+      "BasePath": "_content/LiveChat",
+      "RelativePath": "lib/jquery/dist/jquery-3.6.0.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery-3.6.0.min.js"
     },
     {
       "Identity": "E:\\.Net\\Projects\\LiveChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
